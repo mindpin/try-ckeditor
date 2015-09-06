@@ -1,0 +1,21 @@
+%h1 列表
+
+= link_to '新建', new_post_path, :class => "btn btn-default"
+
+%table.table.table-bordered.table-striped
+  %thead
+    %tr
+      %th 标题
+      %th 内容
+      %th
+
+  %tbody
+    - @posts.each do |post|
+      %tr
+        %td= post.title
+        %td= post.body
+        %td
+          .btn-group
+            = link_to '查看', post, :class => "btn btn-default"
+            = link_to '编辑', edit_post_path(post), :class => "btn btn-default"
+            = link_to '删除', post, method: :delete, data: { confirm: '确定么?' }, :class => "btn btn-default"
