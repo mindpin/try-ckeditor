@@ -3,7 +3,7 @@
 
   .form-inputs
     = f.input :title
-    = f.input :body
+    = f.input :body, :as => :ckeditor, :input_html => {:ckeditor => {:toolbar => 'mini'}}
 
   .form-actions
     = f.button :submit
