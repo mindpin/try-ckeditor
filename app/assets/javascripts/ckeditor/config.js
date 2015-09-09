@@ -108,8 +108,8 @@ CKEDITOR.editorConfig = function( config )
   ];
 
   config.toolbar_mini = [
-		{ name: 'basicstyles', items: [ 'Bold', 'Italic', 'Underline','NumberedList', 'BulletedList' ] },
-		{ name: 'insert', items: [ 'Image'] },
+    { name: 'simplelinks', items: ['simple_link']},
+		{ name: 'basicstyles', items: [ 'Bold', 'Italic', 'Underline','NumberedList', 'BulletedList'] },
 		{ name: 'tools', items: [ 'Maximize' ] }
 	];
 
@@ -135,8 +135,9 @@ CKEDITOR.editorConfig = function( config )
 
     config.allowedContent =
         'p strong em u;' +
-        'a[!href];' +
+        'a[href,target];' +
         'ol ul li;' +
         'img(left,right)[!src,alt,width,height];';
 
+    config.extraPlugins = 'simple_link';
 };
