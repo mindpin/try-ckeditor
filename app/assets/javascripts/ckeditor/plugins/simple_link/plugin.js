@@ -1,3 +1,4 @@
+'use strict';
 (
   function(){
     var validUrlRegex = /^(https?|ftp):\/\/(-\.)?([^\s\/?\.#-]+\.?)+(\/[^\s]*)?[^\s\.,]$/ig,
