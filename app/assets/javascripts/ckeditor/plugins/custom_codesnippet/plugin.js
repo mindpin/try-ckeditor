@@ -78,8 +78,7 @@
       CKEDITOR.dialog.add(DIALOG_NAME, plugin_path + 'dialogs/dialog.js');
 
       var scripts = [
-        editor.settings.js + 'ace.js',
-        CKEDITOR.plugins.getPath('custom_codesnippet') + "dialogs/PBSyntaxHighlighter.js"
+        editor.settings.js + 'ace.js'
       ];
 
       CKEDITOR.scriptLoader.load(scripts, function () {

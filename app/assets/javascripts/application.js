@@ -15,4 +15,5 @@
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require ckeditor/init
-//= require_tree .
+//= require custom_codesnippet
+//= require highlight.pack

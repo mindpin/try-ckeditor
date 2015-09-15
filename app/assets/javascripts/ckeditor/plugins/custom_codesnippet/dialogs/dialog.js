@@ -4,8 +4,6 @@ CKEDITOR.dialog.add("custom_codesnippet_dialog", function (editor) {
 
     var dialog;
 
-    var shighlighter = new PBSyntaxHighlighter(editor.settings.highlighter);
-
     var aceEditor, aceSession, whitespace;
 
     var editorPanel = {
