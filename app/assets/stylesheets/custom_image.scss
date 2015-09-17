@@ -1,0 +1,132 @@
+$area-danger:  #E54028 !default;
+
+@mixin prefixer($name, $params...) {
+  -webkit-#{$name}: $params;
+  -moz-#{$name}: $params;
+  -ms-#{$name}: $params;
+  -o-#{$name}: $params;
+  #{$name}: $params;
+}
+
+@mixin transition($params...) {
+  @include prefixer(transition, $params);
+}
+
+@mixin transform($params...) {
+  @include prefixer(transform, $params);
+}
+
+@mixin default-transition {
+  @include transition(all ease .3s);
+}
+
+
+.upload_panel {
+  .uploading-images {
+    height: 180px;
+    position: relative;
+    .image {
+      width: 50%;
+      height :100%;
+      position: absolute;
+      .ibox {
+        position: absolute;
+        top:0px;left:0px;right:5px;bottom:5px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        border:solid 4px white;
+        box-shadow: 3px 3px 3px rgba(0,0,0,0.1);
+      }
+      .percent {
+        position: absolute;
+        top:0px;left:0px;right:15px;bottom:15px;
+        pointer-events: none;
+        .bar {
+          position: absolute;
+          top:0;right:0;bottom:0;
+          background-color: rgba(black, 0.618);
+        }
+        .txt, .done, .err{
+          position:absolute;
+          left:0;right:0;
+          top:50%;
+          margin-top: -20px;
+          text-align:center;
+          height: 40px; line-height: 40px;
+          font-size: 16px;
+          color:white;text-shadow:1px 1px 3px black;
+          font-weight: bold;
+          font-family: Futura-Condensed;
+          span.p {font-size:32px;}
+          @include default-transition;
+        }
+        .done {
+          font-size: 50px;
+          opacity: 0;
+          @include transform(scale(0.1));
+        }
+        .err {
+          font-size: 50px;
+          opacity: 0;
+          @include transform(scale(0.1));
+          color: lighten($area-danger, 10%);
+        }
+      }
+      .cancel {
+        position: absolute;
+        width:24px;height:24px;
+        line-height: 24px;
+        // border-radius: 100px;
+        background-color: rgba(black, 0.5);
+        color: white;
+        text-align: center;
+        font-size: 14px;
+        top:0px;
+        right:15px;
+        cursor:pointer;
+        @include default-transition;
+        span {
+          font-family: 'Glyphicons Halflings';
+          position: absolute;
+          top:0;left:0;right:0;bottom:0;
+          width:24px;height:24px;
+          line-height: 24px;
+        }
+        &:hover {
+          background-color: black;
+        }
+      }
+
+      &.done {
+        .percent .txt {
+          opacity: 0;
+          @include transform(scale(0.1));
+        }
+        .percent .done {
+          .glyphicon{
+            font-size: 50px;
+            font-family: 'Glyphicons Halflings';
+          }
+          opacity: 1;
+          @include transform(scale(1));
+        }
+        .cancel {
+          opacity: 0;
+          pointer-events:none;
+        }
+      }
+      &.error {
+        .percent .txt {
+          opacity: 0;
+          @include transform(scale(0.1));
+        }
+        .percent .err {
+          opacity: 1;
+          @include transform(scale(1));
+        }
+      }
+    }
+  }
+
+}

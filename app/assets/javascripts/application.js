@@ -17,3 +17,9 @@
 //= require ckeditor/init
 //= require custom_codesnippet
 //= require highlight.pack
+
+//= require img4ye_upload/randstr
+//= require img4ye_upload/canvas-to-blob.min
+//= require img4ye_upload/plupload.full.min
+//= require img4ye_upload/qiniu.min
+//= require img4ye_upload/uploader
